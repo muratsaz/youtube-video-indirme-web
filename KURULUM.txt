@@ -1,0 +1,51 @@
+CEP. - BASKA BIR WINDOWS BILGISAYARDA CALISTIRMA
+
+1. Bu ZIP dosyasini diger bilgisayara kopyalayin.
+   ZIP'e sag tiklayip "Tumunu ayikla" secenegini kullanin.
+   Uygulamayi ZIP'in icinden calistirmayin.
+
+2. Ilk kullanimda gerekli araclari kurun.
+   Baslat menusunden Terminal veya PowerShell'i acin.
+   Asagidaki uc komutu AYRI AYRI yapistirip Enter'a basin.
+   Kurulum izinleri veya kosullari sorulursa ekrandaki yonergeleri izleyin.
+
+   winget install --id Python.Python.3.13 --exact --source winget
+   winget install --id OpenJS.NodeJS.LTS --exact --source winget
+   winget install --id Gyan.FFmpeg --exact --source winget
+
+   Bir arac zaten kuruluysa yeniden kurmaniz gerekmez.
+   Python: 3.11 veya ustu; Node.js: 22 veya ustu; FFmpeg: PATH icinde olmali.
+
+   Winget bulunamazsa Microsoft Store'dan Microsoft'un "App Installer"
+   (Uygulama Yukleyicisi) uygulamasini kurun veya guncelleyin.
+
+3. Kurulumlar bitince Terminal'i kapatin.
+   Ayikladiginiz uygulama klasorunde Baslat.cmd dosyasina cift tiklayin.
+   Ilk acilista gerekli Python paketleri internetten kurulur.
+   Tarayici otomatik acilir; kurulum ve indirme icin internet gerekir.
+
+4. Sonraki kullanimlarda Baslat.vbs dosyasina cift tiklayin.
+   Video baglantisini yapistirin ve indirmeyi baslatin.
+
+DOSYALAR NEREYE KAYDEDILIR?
+O bilgisayardaki kullanicinin Downloads/YouTube klasorune.
+Arayuzde "Klasoru ac" dugmesiyle ulasabilirsiniz.
+
+ADRES HAKKINDA
+http://127.0.0.1:8765 adresi her bilgisayarin kendisini gosterir.
+Bu adresi diger bilgisayara gondermek tek basina yeterli degildir;
+uygulama o bilgisayarda da baslatilmalidir.
+
+KAPATMA VE GUNCELLEME
+Durdur.cmd: uygulamayi tamamen kapatir, devam eden indirmeler iptal olur.
+Guncelle.cmd: indirme motorunu gunceller ve uygulamayi yeniden acar.
+
+PAKET ICERIGI
+Bu paket uygulama kaynaklarini icerir. Bu bilgisayardaki sanal Python
+ortami, indirme gecmisi, loglar, test ciktisi ve videolar dahil degildir.
+Hazir bir EXE degildir; yukaridaki ilk kurulum adimi gereklidir.
+
+Paket kimlikleri Microsoft'un winget-pkgs kaynagindan dogrulanmistir:
+https://github.com/microsoft/winget-pkgs
+
+Bu paket Windows icindir. macOS veya Linux icin baslatma adimlari farklidir.

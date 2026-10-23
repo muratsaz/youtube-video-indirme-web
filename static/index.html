@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="app-token" content="__APP_TOKEN__">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>cep. — Videoların yanında</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V5h7l2 3h9v12H3V7Z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="m9 15 6-6m-8 4-2 2a4 4 0 0 0 6 6l4-4m2-6 2-2a4 4 0 0 0-6-6L9 7"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="m10 9 5 3-5 3Z"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 17V5l11-2v12M9 8l11-2"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="17" cy="16" rx="3" ry="3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4 3c-1 0-1 1-1 2m0 2v1"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-paste" viewBox="0 0 24 24"><rect x="6" y="5" width="14" height="16" rx="2"/><path d="M9 5V3h8v4H9M6 17H3V5h3"/></symbol>
+</svg>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="cep ana sayfa"><span class="brand-icon"><svg><use href="#i-download"/></svg></span>cep<span class="brand-dot">.</span></a>
+  <div class="sidebar-label">KİŞİSEL VİDEO ALANIN</div>
+  <nav aria-label="Ana menü">
+    <a class="nav-item selected" href="#top"><svg><use href="#i-download"/></svg>Video indir<span class="nav-dot"></span></a>
+    <a class="nav-item" href="#library"><svg><use href="#i-video"/></svg>İndirmelerim<span id="nav-count" class="nav-count">0</span></a>
+    <button class="nav-item" id="sidebar-folder"><svg><use href="#i-folder"/></svg>Klasörü aç</button>
+  </nav>
+  <div class="sidebar-bottom"><div class="local-card"><span class="local-symbol"><svg><use href="#i-monitor"/></svg></span><strong>Senin bilgisayarın.</strong><p>Videoların doğrudan<br>kendi klasörüne kaydedilir.</p><span class="local-badge"><i></i>Yerel olarak çalışıyor</span></div><button class="nav-item help-trigger"><svg><use href="#i-help"/></svg>Nasıl kullanılır?</button><div class="sidebar-version">cep. <span>v1.0</span></div></div>
+</aside>
+<main id="top">
+  <header class="topbar"><div>Çevrimdışı izlemeye bir adım <span>→</span></div><span class="connection" id="connection"><i></i>Bilgisayarına bağlı</span></header>
+  <div class="content">
+    <section class="intro"><div class="eyebrow"><span></span> BAĞLANTIYI YAPIŞTIR. YANINA AL.</div><h1>Sevdiğin videolar,<br><span>her zaman yanında.</span></h1><p>Bir YouTube bağlantısı yeter. İndir, sakla, dilediğin zaman izle.</p><div class="hero-mark" aria-hidden="true"><svg><use href="#i-download"/></svg><span>↓</span></div></section>
+    <section class="download-card" aria-labelledby="download-heading">
+      <div class="card-heading"><div class="small-icon"><svg><use href="#i-link"/></svg></div><div><h2 id="download-heading">Ne indirmek istersin?</h2><p>Video, Shorts veya bir YouTube paylaşım bağlantısı.</p></div><span class="youtube-tag"><span>▶</span>YouTube</span></div>
+      <form id="download-form">
+        <label for="video-url" class="field-label">Video bağlantısı</label>
+        <div class="url-field"><svg><use href="#i-link"/></svg><input id="video-url" name="url" type="text" inputmode="url" placeholder="YouTube bağlantısını buraya yapıştır…" autocomplete="off" required maxlength="2048" aria-describedby="form-error"><button id="paste-button" type="button" title="Panodan yapıştır"><svg><use href="#i-paste"/></svg><span>Yapıştır</span></button></div>
+        <div class="options-row"><fieldset class="format-field"><legend class="field-label">İndirme biçimi</legend><div class="segmented"><label><input type="radio" name="kind" value="video" checked><span><svg><use href="#i-video"/></svg>Video <b>MP4</b></span></label><label><input type="radio" name="kind" value="audio"><span><svg><use href="#i-music"/></svg>Yalnızca ses <b>MP3</b></span></label></div></fieldset><div class="quality-field"><label class="field-label" for="quality">Video kalitesi</label><select id="quality" name="quality"><option value="1080">1080p · Full HD</option><option value="720">720p · HD</option><option value="360">360p · Daha küçük dosya</option><option value="best">En yüksek · 4K dahil</option></select></div></div>
+        <div class="form-footer"><span><svg><use href="#i-check"/></svg><span id="quality-hint">Seçilen kalite yoksa en iyi alt kalite indirilir.</span></span><button class="primary" id="download-button" type="submit"><svg><use href="#i-download"/></svg>İndirmeyi başlat<svg class="arrow"><use href="#i-arrow"/></svg></button></div>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+      </form>
+    </section>
+    <div class="save-strip"><span class="save-icon"><svg><use href="#i-folder"/></svg></span><div><strong>Kayıt konumu</strong><span id="save-path">Klasör hazırlanıyor…</span></div><button class="text-button" id="open-folder">Klasörü aç <svg><use href="#i-arrow"/></svg></button></div>
+    <section class="library" id="library" aria-labelledby="library-heading"><div class="library-heading"><h2 id="library-heading">İndirmelerim <span id="total-count">0</span></h2><div class="filter-tabs" role="group" aria-label="İndirme filtresi"><button class="active" data-filter="all">Tümü</button><button data-filter="active">Devam eden</button><button data-filter="done">Tamamlanan</button></div></div><div id="jobs"><div class="empty-state"><span class="empty-icon"><svg><use href="#i-download"/></svg></span><h3>İlk videona yer açtık.</h3><p>Yukarıya bir bağlantı yapıştır; indirmelerini burada takip et.</p><span class="empty-shortcut">Bağlantı + bir tık. Hepsi bu.</span></div></div></section>
+    <footer><span><svg><use href="#i-shield"/></svg>Bilgisayarında çalışır. Dosyaların sende kalır.</span><span>Yalnızca indirme hakkın olan içerikler için kullan.</span></footer>
+  </div>
+</main>
+<div id="toast" role="status" hidden></div>
+<dialog id="help-dialog"><button class="close-dialog" aria-label="Kapat"><svg><use href="#i-close"/></svg></button><span class="eyebrow">ÜÇ KÜÇÜK ADIM</span><h2>Videon yanında olsun.</h2><ol><li><strong>Bağlantıyı kopyala.</strong><p>YouTube'da videonun “Paylaş” düğmesinden bağlantıyı al.</p></li><li><strong>Buraya yapıştır.</strong><p>İstersen kaliteyi değiştir veya yalnızca ses seçeneğini kullan.</p></li><li><strong>İndirmeyi başlat.</strong><p>Dosya otomatik olarak İndirilenler / YouTube klasörüne kaydedilir. Tekrar kaydetmene gerek yok.</p></li></ol><p class="help-note">İndirmeler sırayla yapılır. Pencereyi kapatsan da uygulama arka planda çalışır. Özel, ücretli, oturum gerektiren videolar ve devam eden canlı yayınlar desteklenmez.</p><button class="primary close-help">Anladım <svg><use href="#i-check"/></svg></button></dialog>
+</body></html>
